@@ -11,6 +11,7 @@ class ExpensesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Expenses from viewDidLoad")
     }
     
 

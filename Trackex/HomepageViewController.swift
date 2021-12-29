@@ -11,7 +11,7 @@ class HomepageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("Homepage from viewDidLoad")
     }
     
 
