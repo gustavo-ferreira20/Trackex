@@ -45,13 +45,81 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="cnX-um-aja" userLabel="Account Stack View">
                                                 <rect key="frame" x="8" y="90" width="398" height="150"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPR-fB-aD5" userLabel="Expenses View">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPR-fB-aD5" userLabel="Net income View">
                                                         <rect key="frame" x="0.0" y="0.0" width="179" height="150"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zxg-Cb-cwC">
+                                                                <rect key="frame" x="0.0" y="55" width="49" height="40"/>
+                                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="49" id="0Dk-su-Wb0"/>
+                                                                    <constraint firstAttribute="height" constant="42" id="K10-kL-2nF"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="YHm-y4-xpy">
+                                                                <rect key="frame" x="61.5" y="42.5" width="97.5" height="65"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Net Income" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvB-WC-XNG">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="17.5"/>
+                                                                        <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="15"/>
+                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3,200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9X-bU-ttd">
+                                                                        <rect key="frame" x="0.0" y="39.5" width="97.5" height="25.5"/>
+                                                                        <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="22"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="YHm-y4-xpy" firstAttribute="leading" secondItem="zxg-Cb-cwC" secondAttribute="trailing" constant="12.5" id="NSg-12-LTP"/>
+                                                            <constraint firstItem="YHm-y4-xpy" firstAttribute="centerY" secondItem="wPR-fB-aD5" secondAttribute="centerY" id="ZhU-mx-bsQ"/>
+                                                            <constraint firstItem="zxg-Cb-cwC" firstAttribute="leading" secondItem="wPR-fB-aD5" secondAttribute="leading" id="hAq-9j-R4b"/>
+                                                            <constraint firstItem="zxg-Cb-cwC" firstAttribute="centerY" secondItem="wPR-fB-aD5" secondAttribute="centerY" id="jMc-d1-bkw"/>
+                                                            <constraint firstAttribute="trailing" secondItem="YHm-y4-xpy" secondAttribute="trailing" constant="20" id="shl-8C-dUa"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Php-Wv-oPP" userLabel="Net Income View">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Php-Wv-oPP" userLabel="Expenses View">
                                                         <rect key="frame" x="219" y="0.0" width="179" height="150"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lNp-Sf-hQL">
+                                                                <rect key="frame" x="0.0" y="55" width="49" height="40"/>
+                                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="42" id="HB9-Uu-msP"/>
+                                                                    <constraint firstAttribute="width" constant="49" id="vGV-J4-Omb"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="nFp-u4-gH3">
+                                                                <rect key="frame" x="69" y="39.5" width="92.5" height="71"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3H-1a-rXX">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="92.5" height="17.5"/>
+                                                                        <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="15"/>
+                                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,720" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epg-iz-s3D">
+                                                                        <rect key="frame" x="0.0" y="45.5" width="92.5" height="25.5"/>
+                                                                        <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="22"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="lNp-Sf-hQL" firstAttribute="centerY" secondItem="Php-Wv-oPP" secondAttribute="centerY" id="63X-xQ-ONb"/>
+                                                            <constraint firstItem="nFp-u4-gH3" firstAttribute="leading" secondItem="lNp-Sf-hQL" secondAttribute="trailing" constant="20" id="eih-6M-aK4"/>
+                                                            <constraint firstItem="lNp-Sf-hQL" firstAttribute="leading" secondItem="Php-Wv-oPP" secondAttribute="leading" id="tZe-Wh-9bA"/>
+                                                            <constraint firstAttribute="trailing" secondItem="nFp-u4-gH3" secondAttribute="trailing" constant="17.5" id="wcT-O8-vln"/>
+                                                            <constraint firstItem="nFp-u4-gH3" firstAttribute="centerY" secondItem="Php-Wv-oPP" secondAttribute="centerY" id="ywp-gp-Yo0"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -95,7 +163,7 @@
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yCJ-cc-P9g">
                                                 <rect key="frame" x="8" y="558" width="398" height="311"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.97272235159999998" green="0.96822589640000001" blue="0.98823803659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </tableView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97272235159999998" green="0.96822589640000001" blue="0.98823803659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -143,6 +211,13 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="e0P-T1-zd9">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="balanceLabel" destination="BnL-1O-ya2" id="Qac-4A-dfO"/>
+                        <outlet property="expensesLabel" destination="epg-iz-s3D" id="VTr-ii-qd8"/>
+                        <outlet property="expensesView" destination="Php-Wv-oPP" id="76n-Bs-Hat"/>
+                        <outlet property="netIncomeLabel" destination="g9X-bU-ttd" id="F2H-ZQ-3gL"/>
+                        <outlet property="netView" destination="wPR-fB-aD5" id="EHF-6w-i1Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uaZ-GI-8JZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,12 +354,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="arrow.down.right" catalog="system" width="128" height="112"/>
+        <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="arrow.up.forward" catalog="system" width="128" height="112"/>
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

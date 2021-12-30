@@ -8,10 +8,19 @@
 import UIKit
 
 class HomepageViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var netIncomeLabel: UILabel!
+    @IBOutlet weak var expensesLabel: UILabel!
+    
+    @IBOutlet weak var netView: UIView!
+    @IBOutlet weak var expensesView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Homepage from viewDidLoad")
+        uiLayout()
     }
     
 
@@ -21,6 +30,11 @@ class HomepageViewController: UIViewController {
         
     }
  
+    
+    private func uiLayout(){
+        netView.layer.cornerRadius = 25
+        expensesView.layer.cornerRadius = 25
+    }
 
 
 }
