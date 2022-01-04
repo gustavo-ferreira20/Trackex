@@ -20,6 +20,9 @@
 		931833FA277ADE2200D11080 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931833F9277ADE2200D11080 /* ExpensesViewController.swift */; };
 		931833FC277ADE3D00D11080 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931833FB277ADE3D00D11080 /* IncomeViewController.swift */; };
 		931833FE277AE48D00D11080 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931833FD277AE48D00D11080 /* TabBarViewController.swift */; };
+		93FA4CAD2783E13E00E15D88 /* ScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA4CAC2783E13E00E15D88 /* ScreenLayout.swift */; };
+		93FA4CAF2783E8FA00E15D88 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA4CAE2783E8FA00E15D88 /* AddIncomeViewController.swift */; };
+		93FA4CB12783E91700E15D88 /* AddExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA4CB02783E91700E15D88 /* AddExpensesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		931833F9277ADE2200D11080 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		931833FB277ADE3D00D11080 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		931833FD277AE48D00D11080 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		93FA4CAC2783E13E00E15D88 /* ScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLayout.swift; sourceTree = "<group>"; };
+		93FA4CAE2783E8FA00E15D88 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
+		93FA4CB02783E91700E15D88 /* AddExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,8 @@
 				931833F9277ADE2200D11080 /* ExpensesViewController.swift */,
 				931833FB277ADE3D00D11080 /* IncomeViewController.swift */,
 				931833FD277AE48D00D11080 /* TabBarViewController.swift */,
+				93FA4CAE2783E8FA00E15D88 /* AddIncomeViewController.swift */,
+				93FA4CB02783E91700E15D88 /* AddExpensesViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 		931833F6277ACA5D00D11080 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				93FA4CAC2783E13E00E15D88 /* ScreenLayout.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -300,7 +309,10 @@
 				931833FC277ADE3D00D11080 /* IncomeViewController.swift in Sources */,
 				931833FE277AE48D00D11080 /* TabBarViewController.swift in Sources */,
 				931833FA277ADE2200D11080 /* ExpensesViewController.swift in Sources */,
+				93FA4CAF2783E8FA00E15D88 /* AddIncomeViewController.swift in Sources */,
+				93FA4CB12783E91700E15D88 /* AddExpensesViewController.swift in Sources */,
 				931833C7277AC31300D11080 /* SceneDelegate.swift in Sources */,
+				93FA4CAD2783E13E00E15D88 /* ScreenLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

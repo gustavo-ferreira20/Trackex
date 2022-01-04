@@ -8,6 +8,7 @@
 import UIKit
 
 class ExpensesViewController: UIViewController {
+    private var screenLayout = ScreenLayout()
 
     
     @IBOutlet weak var chartView: UIView!
@@ -21,7 +22,8 @@ class ExpensesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        layoutDesign()
+        screenLayout.layoutDesignExpenses(view: chartView, button1: foodExpenseButton, button2: homeExpenseButton, button3: billExpenseButton)
+        screenLayout.layoutDesign(button: addButton)
         print("Expenses from viewDidLoad")
     }
     
@@ -30,14 +32,12 @@ class ExpensesViewController: UIViewController {
       super.viewWillAppear(animated)
       self.tabBarController?.navigationItem.title = "Expenses"
     }
-
     
-    private func layoutDesign(){
-        chartView.layer.cornerRadius = 5
-        addButton.layer.cornerRadius = addButton.bounds.size.height / 2
-        foodExpenseButton.layer.cornerRadius = 5
-        homeExpenseButton.layer.cornerRadius = 5
-        billExpenseButton.layer.cornerRadius = 5
+    
+    
+    @IBAction func didPressAddButton(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "ExpensesAddButtonClicked", sender: self)
     }
-
+    
 }

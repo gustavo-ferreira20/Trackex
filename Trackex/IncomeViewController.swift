@@ -8,10 +8,15 @@
 import UIKit
 
 class IncomeViewController: UIViewController {
+    
+    @IBOutlet weak var addButton: UIButton!
+ 
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Income from viewDidLoad")
+        ScreenLayout().layoutDesign(button: addButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,5 +30,13 @@ class IncomeViewController: UIViewController {
         super.viewWillDisappear(animated)
         print("Income from viewWillDisappear")
     }
+    
+    
+    
+    @IBAction func didPressAddButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "IncomeAddButtonClicked", sender: self)
+    }
+    
 
 }
+
