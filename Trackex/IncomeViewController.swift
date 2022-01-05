@@ -9,6 +9,8 @@ import UIKit
 
 class IncomeViewController: UIViewController {
     
+    private var screenLayout = ScreenLayout()
+    
     @IBOutlet weak var addButton: UIButton!
  
     
@@ -16,7 +18,8 @@ class IncomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Income from viewDidLoad")
-        ScreenLayout().layoutDesign(button: addButton)
+        screenLayout.layoutDesign(button: addButton)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

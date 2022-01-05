@@ -10,6 +10,8 @@ import UIKit
 
 struct ScreenLayout{
     
+    
+    
     func layoutDesign(button: UIButton!){
         button.layer.cornerRadius = button.bounds.size.height / 2
     }
@@ -21,5 +23,20 @@ struct ScreenLayout{
         button2.layer.cornerRadius = 5
         button3.layer.cornerRadius = 5
     }
+    
+    func layoutView(view: UIView!){
+        view.layer.cornerRadius = 5
+    }
+    
+    func setTextfieldBorder(txtfield: UITextField!){
+        let bottomLine = CALayer()
+        
+        bottomLine.frame = CGRect(x: 0.0, y: txtfield.frame.height - 1, width: txtfield.frame.width , height: 1.0)
+        bottomLine.backgroundColor = UIColor.white.cgColor
+        txtfield.borderStyle = UITextField.BorderStyle.none
+        txtfield.layer.addSublayer(bottomLine)
+        txtfield.layer.masksToBounds = true
+    }
+    
 
 }
