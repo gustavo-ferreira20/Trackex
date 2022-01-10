@@ -52,9 +52,6 @@ class AddIncomeViewController: UIViewController {
         delegate?.addIncome(inc: income)
         
         self.dismiss(animated: true, completion: nil)
-        
-        print(income.amount)
-        print(income.description)
 
     }
     

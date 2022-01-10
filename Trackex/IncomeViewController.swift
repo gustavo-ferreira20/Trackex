@@ -80,7 +80,6 @@ extension IncomeViewController: AddIncomeDelegate{
     func addIncome(inc: Income) {
         self.incomes.append(inc)
         self.tableView.reloadData()
-        print("delegate called")
     }
     
     
