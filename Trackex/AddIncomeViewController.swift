@@ -7,7 +7,15 @@
 
 import UIKit
 
+
+protocol AddIncomeDelegate {
+    func addIncome(inc: Income)
+}
+
+
 class AddIncomeViewController: UIViewController {
+     var delegate: AddIncomeDelegate?
+    
     private var screenLayout = ScreenLayout()
     
     @IBOutlet weak var textFieldView: UIView!
@@ -28,6 +36,26 @@ class AddIncomeViewController: UIViewController {
     }
     
     @IBAction func didPressAdd(_ sender: Any) {
+        
+        guard let description = descriptionTxtField.text, descriptionTxtField.hasText else{
+            print("Handle error here - no description")
+            return
+        }
+        
+        guard let amount = amountTxtField.text, amountTxtField.hasText else{
+            print("Handle error here - no amount")
+            return
+        }
+        
+        let income = Income(amount: Double(amount)!, description: description)
+        
+        delegate?.addIncome(inc: income)
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        print(income.amount)
+        print(income.description)
+
     }
     
 }
