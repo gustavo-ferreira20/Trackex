@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class IncomeViewController: UIViewController {
+    private let realm = try! Realm()
     
     
     private var screenLayout = ScreenLayout()
-    private var incomes = [Income]()
+//    private var incomes = [Income]()
+    private var incomes: Results<Income>?
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -21,8 +24,8 @@ class IncomeViewController: UIViewController {
         super.viewDidLoad()
         print("Income from viewDidLoad")
         tableView.dataSource = self
-
         screenLayout.layoutDesign(button: addButton)
+        loadIncomes()
 
     }
     
@@ -46,6 +49,12 @@ class IncomeViewController: UIViewController {
         }
     }
     
+    // Loading itens from Realm DB
+    func loadIncomes() {
+        incomes = realm.objects(Income.self)
+        tableView.reloadData()
+    }
+    
     
     @IBAction func didPressAddButton(_ sender: Any) {
         self.performSegue(withIdentifier: "IncomeAddButtonClicked", sender: self)
@@ -59,7 +68,7 @@ class IncomeViewController: UIViewController {
 
 extension IncomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return incomes.count
+        return incomes?.count ?? 1
     }
     
     
@@ -67,8 +76,8 @@ extension IncomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
         
-        cell.textLabel?.text = incomes[indexPath.row].description
-        cell.detailTextLabel?.text = String(incomes[indexPath.row].amount)
+        cell.textLabel?.text = incomes?[indexPath.row].desc ?? "No income added yet"
+        cell.detailTextLabel?.text = String(incomes![indexPath.row].amount)
         return cell
     }
    
@@ -78,8 +87,15 @@ extension IncomeViewController: UITableViewDataSource{
 
 extension IncomeViewController: AddIncomeDelegate{
     func addIncome(inc: Income) {
-        self.incomes.append(inc)
+//        self.incomes.append(inc)
+//        self.tableView.reloadData()
+        
+        try! self.realm.write{
+            self.realm.add(inc)
+        }
+        
         self.tableView.reloadData()
+        
     }
     
     

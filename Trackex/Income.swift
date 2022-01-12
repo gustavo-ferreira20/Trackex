@@ -6,8 +6,17 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Income {
-    let amount: Double
-    let description: String
+class Income: Object {
+    
+    @Persisted var desc: String
+    @Persisted var amount: Double
+    
+   convenience init(desc : String, amount : Double) {
+        self.init()
+        
+        self.desc = desc
+        self.amount = amount
+    }
 }

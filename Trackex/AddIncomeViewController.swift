@@ -47,7 +47,8 @@ class AddIncomeViewController: UIViewController {
             return
         }
         
-        let income = Income(amount: Double(amount)!, description: description)
+//        let income = Income(amount: Double(amount)!, description: description)
+        let income = Income(desc: description, amount: Double(amount)!)
         
         delegate?.addIncome(inc: income)
         
