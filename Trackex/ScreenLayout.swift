@@ -38,5 +38,10 @@ struct ScreenLayout{
         txtfield.layer.masksToBounds = true
     }
     
+    
+    func tableViewLayout(tableView: UITableView){
+        tableView.rowHeight = 80.0
+    }
+    
 
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
 
 class IncomeViewController: UIViewController {
     private let realm = try! Realm()
@@ -25,6 +26,7 @@ class IncomeViewController: UIViewController {
         print("Income from viewDidLoad")
         tableView.dataSource = self
         screenLayout.layoutDesign(button: addButton)
+        screenLayout.tableViewLayout(tableView: tableView)
         loadIncomes()
 
     }
@@ -73,16 +75,56 @@ extension IncomeViewController: UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! SwipeTableViewCell
         
         cell.textLabel?.text = incomes?[indexPath.row].desc ?? "No income added yet"
         cell.detailTextLabel?.text = String(incomes![indexPath.row].amount)
+        
+        cell.delegate = self
+        
         return cell
     }
    
     
 }
 
+// MARK: - Swipe Cell Delegate Methods
+
+extension IncomeViewController: SwipeTableViewCellDelegate{
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion from Realm
+            if let incomeForDeletion = self.incomes?[indexPath.row]{
+                do{
+                    try self.realm.write{
+                        self.realm.delete(incomeForDeletion)
+                     }
+                }catch {
+                    print("Error deleting income,\(error)")
+                }
+//                tableView.reloadData()
+            }
+            
+        }
+
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete-icon")
+
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        return options
+    }
+     
+}
+
+
+// MARK: - Adding Income to the tableView
 
 extension IncomeViewController: AddIncomeDelegate{
     func addIncome(inc: Income) {
