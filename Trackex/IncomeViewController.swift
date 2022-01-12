@@ -59,7 +59,6 @@ class IncomeViewController: UIViewController {
     @IBAction func didPressAddButton(_ sender: Any) {
         self.performSegue(withIdentifier: "IncomeAddButtonClicked", sender: self)
         
-        
     }
     
 
