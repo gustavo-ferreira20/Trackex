@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol AddExpenseDelegate {
+    func addExpense(exp: Expense)
+}
+
 class AddExpensesViewController: UIViewController {
     
+    var delegate: AddExpenseDelegate?
     private var screenLayout = ScreenLayout()
+    private var buttonType: String = ""
     
     
     @IBOutlet weak var textFieldView: UIView!
@@ -32,14 +38,38 @@ class AddExpensesViewController: UIViewController {
     }
     
     @IBAction func didPressAdd(_ sender: Any) {
+        
+        guard let description = descriptionTextField.text, descriptionTextField.hasText else{
+            print("Handle error here - no description")
+            return
+        }
+        
+        guard let amount = amountTextField.text, amountTextField.hasText else{
+            print("Handle error here - no amount")
+            return
+        }
+        
+
+        let expense = Expense(desc: description, amount: Double(amount)!, image: buttonType)
+        
+        delegate?.addExpense(exp: expense)
+        print(expense)
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didPressCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    @IBAction func typeButtonPressed(_ sender: UIButton) {
+        buttonType = sender.titleLabel?.text ?? "No title"
+        print(buttonType)
+    }
+    
 }
+
+// MARK: - TextField layout
 
 extension UITextField {
     func placeholderColor(_ color: UIColor){
@@ -50,3 +80,7 @@ extension UITextField {
         self.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor : color])
     }
 }
+
+
+
+

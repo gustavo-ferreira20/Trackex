@@ -24,6 +24,8 @@
 		9340783C278E6B74002307B9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9340783B278E6B74002307B9 /* Realm */; };
 		9340783E278E6B74002307B9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9340783D278E6B74002307B9 /* RealmSwift */; };
 		936BB285278BCB35008D1E73 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936BB284278BCB35008D1E73 /* Income.swift */; };
+		93DB9A52279108FC0013E13F /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB9A51279108FC0013E13F /* Expense.swift */; };
+		93DB9A5427911A960013E13F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DB9A5327911A960013E13F /* CollectionViewCell.swift */; };
 		93FA4CAD2783E13E00E15D88 /* ScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA4CAC2783E13E00E15D88 /* ScreenLayout.swift */; };
 		93FA4CAF2783E8FA00E15D88 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA4CAE2783E8FA00E15D88 /* AddIncomeViewController.swift */; };
 		93FA4CB12783E91700E15D88 /* AddExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FA4CB02783E91700E15D88 /* AddExpensesViewController.swift */; };
@@ -71,6 +73,8 @@
 		931833FB277ADE3D00D11080 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		931833FD277AE48D00D11080 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		936BB284278BCB35008D1E73 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		93DB9A51279108FC0013E13F /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		93DB9A5327911A960013E13F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		93FA4CAC2783E13E00E15D88 /* ScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLayout.swift; sourceTree = "<group>"; };
 		93FA4CAE2783E8FA00E15D88 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		93FA4CB02783E91700E15D88 /* AddExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpensesViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				931833FD277AE48D00D11080 /* TabBarViewController.swift */,
 				93FA4CAE2783E8FA00E15D88 /* AddIncomeViewController.swift */,
 				93FA4CB02783E91700E15D88 /* AddExpensesViewController.swift */,
+				93DB9A5327911A960013E13F /* CollectionViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			children = (
 				93FA4CAC2783E13E00E15D88 /* ScreenLayout.swift */,
 				936BB284278BCB35008D1E73 /* Income.swift */,
+				93DB9A51279108FC0013E13F /* Expense.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -216,7 +222,6 @@
 				C7B25AEBCC80CDEE0EC29BA7 /* Pods-TrackexTests.debug.xcconfig */,
 				6C1C9DEC47967E79BDF6EB08 /* Pods-TrackexTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -318,7 +323,7 @@
 			);
 			mainGroup = 931833B8277AC31300D11080;
 			packageReferences = (
-				9340783A278E6B74002307B9 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				9340783A278E6B74002307B9 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 931833C2277AC31300D11080 /* Products */;
 			projectDirPath = "";
@@ -466,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93DB9A52279108FC0013E13F /* Expense.swift in Sources */,
 				931833C9277AC31300D11080 /* WelcomeViewController.swift in Sources */,
 				931833C5277AC31300D11080 /* AppDelegate.swift in Sources */,
 				931833F8277ACAEB00D11080 /* HomepageViewController.swift in Sources */,
@@ -473,6 +479,7 @@
 				936BB285278BCB35008D1E73 /* Income.swift in Sources */,
 				931833FE277AE48D00D11080 /* TabBarViewController.swift in Sources */,
 				931833FA277ADE2200D11080 /* ExpensesViewController.swift in Sources */,
+				93DB9A5427911A960013E13F /* CollectionViewCell.swift in Sources */,
 				93FA4CAF2783E8FA00E15D88 /* AddIncomeViewController.swift in Sources */,
 				93FA4CB12783E91700E15D88 /* AddExpensesViewController.swift in Sources */,
 				931833C7277AC31300D11080 /* SceneDelegate.swift in Sources */,
@@ -822,7 +829,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9340783A278E6B74002307B9 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+		9340783A278E6B74002307B9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -835,12 +842,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		9340783B278E6B74002307B9 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9340783A278E6B74002307B9 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = 9340783A278E6B74002307B9 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
 		9340783D278E6B74002307B9 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9340783A278E6B74002307B9 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = 9340783A278E6B74002307B9 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

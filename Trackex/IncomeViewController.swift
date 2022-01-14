@@ -66,6 +66,7 @@ class IncomeViewController: UIViewController {
 
 }
 
+// MARK: - tableView Delegate Methods
 
 extension IncomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
