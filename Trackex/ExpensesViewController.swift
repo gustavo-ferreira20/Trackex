@@ -181,8 +181,30 @@ extension ExpensesViewController: UICollectionViewDelegate{
 //        self.performSegue(withIdentifier: "editSegue", sender: self)
         print("Selected Expense: \(expenses?[indexPath.row].desc ?? "no name")")
         print(myIndex)
+        
+        let alert = UIAlertController(title: "Do you want to delete?", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Delete", style: .default) { action in
+//            What will happen once the user clicks the Delete button on UIAlert
+//            Deleting an expense
+            if let expenseItem = self.expenses?[self.myIndex]{
+                do{
+                    try self.realm.write{
+    //                    to delete an item
+                        self.realm.delete(expenseItem)
+                    }
+                } catch{
+                    print("error deleting....")
+                }
+    //            Uploading collectionView
+                self.collectionView.reloadData()
+            }
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
+
 
 
 // MARK: - Adding Expense to the UICollectionView
