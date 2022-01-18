@@ -325,6 +325,9 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didClickHomeFilter:" destination="uv6-F3-Hp6" eventType="touchUpInside" id="8Py-np-Zer"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpi-LW-Ui2">
                                                 <rect key="frame" x="159.5" y="0.0" width="79" height="72.5"/>
@@ -336,6 +339,9 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didClickFoodFilter:" destination="uv6-F3-Hp6" eventType="touchUpInside" id="ddp-4N-Shd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eft-OC-d0s">
                                                 <rect key="frame" x="318.5" y="0.0" width="79.5" height="72.5"/>
@@ -347,6 +353,9 @@
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didClickOtherFilter:" destination="uv6-F3-Hp6" eventType="touchUpInside" id="jst-s9-ETf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

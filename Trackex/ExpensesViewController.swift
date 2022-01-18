@@ -13,6 +13,12 @@ class ExpensesViewController: UIViewController{
     private let realm = try! Realm()
     private var screenLayout = ScreenLayout()
     private var expenses: Results<Expense>?
+    private var homeFilterClicked: String = ""
+    private var foodFilterClicked: String = ""
+    private var otherFilterClicked: String = ""
+    private var isHomeoptionClicked: Bool = true
+    private var isFoodoptionClicked: Bool = true
+    private var isOtheroptionClicked: Bool = true
     private var myIndex = 0
 
     
@@ -45,6 +51,48 @@ class ExpensesViewController: UIViewController{
       self.tabBarController?.navigationItem.title = "Expenses"
     }
     
+    @IBAction func didClickHomeFilter(_ sender: Any) {
+        if isHomeoptionClicked == true{
+    //        Fetching Expenses according to the filter button
+            homeFilterClicked = "Home Bills"
+            filteringExpenses(filterType: homeFilterClicked)
+            isHomeoptionClicked = false
+            isFoodoptionClicked = true
+            isOtheroptionClicked = true
+        }else{
+            loadExpenses()
+            isHomeoptionClicked = true
+        }
+    }
+    
+    @IBAction func didClickFoodFilter(_ sender: Any) {
+        if isFoodoptionClicked == true{
+    //        Fetching Expenses according to the filter button
+            foodFilterClicked = "Food Bills"
+            filteringExpenses(filterType: foodFilterClicked)
+            isFoodoptionClicked = false
+            isHomeoptionClicked = true
+            isOtheroptionClicked = true
+        }else{
+            loadExpenses()
+            isFoodoptionClicked = true
+        }
+    }
+    
+    @IBAction func didClickOtherFilter(_ sender: Any) {
+        if isOtheroptionClicked == true{
+    //        Fetching Expenses according to the filter button
+            otherFilterClicked = "Others"
+            filteringExpenses(filterType: otherFilterClicked)
+            isOtheroptionClicked = false
+            isHomeoptionClicked = true
+            isFoodoptionClicked = true
+        }else{
+            loadExpenses()
+            isOtheroptionClicked = true
+        }
+        
+    }
     
     
     @IBAction func didPressAddButton(_ sender: Any) {
@@ -62,6 +110,13 @@ class ExpensesViewController: UIViewController{
     // Loading itens from Realm DB
     func loadExpenses() {
         expenses = realm.objects(Expense.self)
+        collectionView.reloadData()
+    }
+    
+    
+    func filteringExpenses(filterType: String){
+        loadExpenses()
+        expenses = expenses?.filter("image CONTAINS %@", filterType).sorted(byKeyPath: "image", ascending: true)
         collectionView.reloadData()
     }
     
@@ -106,13 +161,11 @@ extension ExpensesViewController: UICollectionViewDataSource{
         default:
             print("No type added")
         }
-        
-//        cell.backgroundColor = UIColor.blue
-//        cell.tintColor = UIColor.white
 
         return cell
         
     }
+    
     
     
     
